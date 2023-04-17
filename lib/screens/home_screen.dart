@@ -14,12 +14,13 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Quiz App'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(children: const [
           Text(
             'Hi, John',
             style: AppStyles.titleStyle,
-          )
+          ),
+          Gap(20),
         ]),
       ),
     );
