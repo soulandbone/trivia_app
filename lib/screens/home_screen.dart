@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import '../utils/app_styles.dart';
+import '../widgets/custom_tile.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:trivia_app/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,6 +23,13 @@ class HomeScreen extends StatelessWidget {
             style: AppStyles.titleStyle,
           ),
           Gap(20),
+          CustomTile(
+              text1: 'Points',
+              text2: '750',
+              icon: Icon(
+                FontAwesomeIcons.trophy,
+                color: AppStyles.turquoise,
+              ))
         ]),
       ),
     );

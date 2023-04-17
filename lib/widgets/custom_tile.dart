@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:trivia_app/utils/app_styles.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomTile extends StatelessWidget {
   final String text1;
   final String text2;
-  final IconData icon;
+  final Icon icon;
 
   const CustomTile(
       {required this.text1,
@@ -17,8 +16,27 @@ class CustomTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: AppStyles.cardColor),
-      child: Row(children: const [Icon(FontAwesomeIcons.trophy)]),
+      padding: const EdgeInsets.all(10),
+      width: 130,
+      decoration: BoxDecoration(
+          color: AppStyles.cardColor, borderRadius: BorderRadius.circular(15)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          icon,
+          const Gap(15),
+          Column(
+            children: [
+              Text(
+                text1,
+                style: const TextStyle(color: Colors.blue),
+              ),
+              Text(text2)
+            ],
+          ),
+          const Spacer(),
+        ],
+      ),
     );
   }
 }
