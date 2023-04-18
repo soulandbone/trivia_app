@@ -19,7 +19,16 @@ class CustomTile extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       width: 130,
       decoration: BoxDecoration(
-          color: AppStyles.cardColor, borderRadius: BorderRadius.circular(15)),
+          //border: Border.all(width: 1, color: Colors.white),
+          // boxShadow: [
+          //   BoxShadow(
+          //       color: Colors.grey.withOpacity(0.5),
+          //       spreadRadius: 3,
+          //       blurRadius: 8,
+          //       offset: const Offset(3, 3)),
+          // ],
+          color: AppStyles.cardBgColor,
+          borderRadius: BorderRadius.circular(15)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +40,10 @@ class CustomTile extends StatelessWidget {
                 text1,
                 style: const TextStyle(color: Colors.blue),
               ),
-              Text(text2)
+              Text(
+                text2,
+                style: AppStyles.cardSubTitle,
+              )
             ],
           ),
           const Spacer(),

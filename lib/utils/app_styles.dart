@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const Color bgColor = Color.fromRGBO(60, 67, 89, 1);
+  static const Color cardBgColor = Color.fromRGBO(79, 84, 100, 1);
   static const Color turquoise = Color.fromRGBO(0, 218, 219, 1);
-  static const Color cardColor = Colors.orange;
-  static const TextStyle titleStyle =
+
+  static const TextStyle title =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white);
+  static const TextStyle cardSubTitle =
+      TextStyle(fontSize: 16, color: Colors.white70);
+  static const TextStyle cardTitle =
+      TextStyle(fontSize: 16, color: Colors.white70);
 }

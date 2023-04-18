@@ -17,19 +17,48 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(children: const [
-          Text(
-            'Hi, John',
-            style: AppStyles.titleStyle,
+        child: Column(children: [
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Hi, John',
+              style: AppStyles.title,
+            ),
           ),
-          Gap(20),
-          CustomTile(
-              text1: 'Points',
-              text2: '750',
-              icon: Icon(
-                FontAwesomeIcons.trophy,
-                color: AppStyles.turquoise,
-              ))
+          const Gap(20),
+          Center(
+            child: Container(
+              width: 275,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: AppStyles.cardBgColor,
+                  border: Border.all(width: 1, color: Colors.white)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  CustomTile(
+                      text1: 'Points',
+                      text2: '750',
+                      icon: Icon(
+                        FontAwesomeIcons.coins,
+                        color: AppStyles.turquoise,
+                      )),
+                  VerticalDivider(
+                    width: 4,
+                    thickness: 1,
+                    color: Colors.orange,
+                  ),
+                  CustomTile(
+                      text1: 'Ranking',
+                      text2: '181',
+                      icon: Icon(
+                        FontAwesomeIcons.trophy,
+                        color: AppStyles.turquoise,
+                      )),
+                ],
+              ),
+            ),
+          )
         ]),
       ),
     );
