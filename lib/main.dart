@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_app/utils/app_styles.dart';
 
-import './screens/home_screen.dart';
+import '../screens/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: const HomeScreen());
+            appBarTheme: const AppBarTheme(color: AppStyles.background),
+            scaffoldBackgroundColor: AppStyles.bgColor,
+            visualDensity: VisualDensity.adaptivePlatformDensity),
+        home: const BottomBar());
   }
 }

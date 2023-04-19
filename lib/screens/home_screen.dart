@@ -11,10 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyles.bgColor,
-      appBar: AppBar(
-        title: const Text('Quiz App'),
-      ),
+      appBar: AppBar(title: const Text('Home Screen')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(children: [
