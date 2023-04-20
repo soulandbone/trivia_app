@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:trivia_app/widgets/category.dart';
 import '../utils/app_styles.dart';
 import '../widgets/custom_tile.dart';
 
@@ -55,7 +56,12 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          const Gap(20),
+          const Align(
+              alignment: Alignment.centerLeft,
+              child:
+                  Category(title: 'Sports', image: 'assets/images/sports.jpg'))
         ]),
       ),
     );
