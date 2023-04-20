@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:trivia_app/widgets/category.dart';
-import '../utils/app_styles.dart';
-import '../widgets/custom_tile.dart';
 
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../widgets/category.dart';
+import '../utils/app_styles.dart';
+import '../widgets/composed_widgets/points_ranking.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final List<int> numbers = [1, 2, 3, 4];
+  final Map<String, String> answers = {
+    '1.': 'Wilt Chamberlain',
+    '2.': 'Dominique Wilkins',
+    '3.': 'Magic Johnson',
+    '4.': 'Tracy McGrady'
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -24,44 +31,27 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(20),
-          Center(
-            child: Container(
-              width: 275,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: AppStyles.cardBgColor,
-                  border: Border.all(width: 1, color: Colors.white)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  CustomTile(
-                      text1: 'Points',
-                      text2: '750',
-                      icon: Icon(
-                        FontAwesomeIcons.coins,
-                        color: AppStyles.turquoise,
-                      )),
-                  VerticalDivider(
-                    width: 4,
-                    thickness: 1,
-                    color: Colors.orange,
-                  ),
-                  CustomTile(
-                      text1: 'Ranking',
-                      text2: '181',
-                      icon: Icon(
-                        FontAwesomeIcons.trophy,
-                        color: AppStyles.turquoise,
-                      )),
-                ],
-              ),
-            ),
-          ),
+          const PointsRanking(),
           const Gap(20),
-          const Align(
-              alignment: Alignment.centerLeft,
-              child:
-                  Category(title: 'Sports', image: 'assets/images/sports.jpg'))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Category(title: 'Sports', image: 'assets/images/sports.jpg'),
+              Category(title: 'Geography', image: 'assets/images/geography.jpg')
+            ],
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: numbers.length,
+              itemBuilder: (context, index) {
+                return Center(
+                    child: Text(
+                  numbers[index].toString(),
+                  style: const TextStyle(fontSize: 26, color: Colors.white),
+                ));
+              },
+            ),
+          )
         ]),
       ),
     );

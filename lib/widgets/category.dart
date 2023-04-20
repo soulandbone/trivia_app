@@ -14,12 +14,12 @@ class Category extends StatelessWidget {
         elevation: 8,
         shadowColor: Colors.white54,
         borderOnForeground: true,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: Colors.white,
+              color: Colors.amberAccent.withOpacity(0.7),
               width: 2,
             ),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
                 bottomLeft: Radius.circular(10),
@@ -32,7 +32,7 @@ class Category extends StatelessWidget {
                 title,
                 style: AppStyles.cardTitle.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: Colors.amber,
+                    color: AppStyles.turquoise,
                     fontSize: 20),
               ),
               ClipRRect(

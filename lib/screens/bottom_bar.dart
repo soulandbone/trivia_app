@@ -22,7 +22,7 @@ class _BottomBarState extends State<BottomBar> {
   }
 
   List<Widget> pages = [
-    const HomeScreen(),
+    HomeScreen(),
     const ProfileScreen(),
     const LeaderBoardsScreen()
   ];
