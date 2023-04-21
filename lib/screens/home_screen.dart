@@ -19,8 +19,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(answers['1']);
-
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
       body: Padding(
@@ -49,8 +47,8 @@ class HomeScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Center(
                     child: Answers(
-                  number: answers.keys.toList()[index],
-                  answerText: 'Answer # ${answers['${index + 1}']}',
+                  number: (index),
+                  answerText: '${answers['${index + 1}']}',
                 ));
               },
             ),
