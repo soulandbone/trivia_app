@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
+  static const routeName = '/questions-screen';
+
   const QuestionsScreen({super.key});
 
   @override
@@ -14,7 +16,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       appBar: AppBar(
         title: const Text('Your Profile'),
       ),
-      body: const Center(child: Text('This is the profile Screen')),
+      body: Column(children: [
+        Container(
+          child: const Text('Who scored 100 points in a single NBA game'),
+        )
+      ]),
     );
   }
 }

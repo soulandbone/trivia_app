@@ -21,6 +21,7 @@ class Answers extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
+        onTap: () => print('this is index $number'),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         tileColor: Colors.blue,

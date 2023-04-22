@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:trivia_app/screens/questions_screen.dart';
 import 'package:trivia_app/widgets/answers.dart';
 
 import '../widgets/category.dart';
@@ -16,6 +17,27 @@ class HomeScreen extends StatelessWidget {
     '3': 'Magic Johnson',
     '4': 'Tracy McGrady'
   };
+
+  final List<Map<String, dynamic>> questions_answers = [
+    {
+      'question': 'Who scored 100 points in a game',
+      'answers': {
+        '1': 'Wilt Chamberlain',
+        '2': 'Dominique Wilkins',
+        '3': 'Magic Johnson',
+        '4': 'Tracy McGrady'
+      },
+    },
+    {
+      'question': 'Who scored 60 in his last game in the NBA',
+      'answers': {
+        '1': 'Kobe Bryant',
+        '2': 'Larry Bird',
+        '3': 'Kareem Abdul-Jabbar',
+        '4': 'Vince Carter'
+      },
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +58,15 @@ class HomeScreen extends StatelessWidget {
           const Gap(20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Category(title: 'Sports', image: 'assets/images/sports.jpg'),
-              Category(title: 'Geography', image: 'assets/images/geography.jpg')
+            children: [
+              InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(QuestionsScreen.routeName);
+                  },
+                  child: const Category(
+                      title: 'Sports', image: 'assets/images/sports.jpg')),
+              const Category(
+                  title: 'Geography', image: 'assets/images/geography.jpg')
             ],
           ),
           Expanded(
