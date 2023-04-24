@@ -17,7 +17,8 @@ class Answers extends StatefulWidget {
 }
 
 class _AnswersState extends State<Answers> {
-  bool correctAnswer = false;
+  bool pressed = false;
+  bool correct = false;
 
   List<Icon> icons = const [
     Icon(FontAwesomeIcons.one),
@@ -28,8 +29,9 @@ class _AnswersState extends State<Answers> {
 
   void checkAnswer(index) {
     setState(() {
+      pressed = true;
       if (widget.answer == (index + 1)) {
-        correctAnswer = true;
+        correct = true;
       }
     });
   }
@@ -45,7 +47,10 @@ class _AnswersState extends State<Answers> {
         onTap: () => checkAnswer(widget.number),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: correctAnswer ? Colors.green : Colors.red,
+        tileColor:
+            pressed ? (correct ? Colors.green : Colors.red) : Colors.blue,
+
+        // Should be that starts with base blue, and then changes to red or green depending on the answer
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),
       ),
