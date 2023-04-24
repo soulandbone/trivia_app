@@ -16,7 +16,7 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   final List<Map<String, dynamic>> questionsAnswers = [
     {
-      'question': 'Who scored 100 points in a game',
+      'question': 'Who scored 100 points in a game?',
       'answers': {
         '1': 'Wilt Chamberlain',
         '2': 'Dominique Wilkins',
@@ -25,7 +25,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       },
     },
     {
-      'question': 'Who scored 60 in his last game in the NBA',
+      'question': 'Who scored 60 in his last game in the NBA?',
       'answers': {
         '1': 'Kobe Bryant',
         '2': 'Larry Bird',
