@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_app/widgets/composed_widgets/quiz.dart';
 
-class QuestionsScreen extends StatefulWidget {
+class QuestionsScreen extends StatelessWidget {
   static const routeName = '/questions-screen'; //add
 
   QuestionsScreen({super.key});
 
-  @override
-  State<QuestionsScreen> createState() => _QuestionsScreenState();
-}
-
-class _QuestionsScreenState extends State<QuestionsScreen> {
   final List<Map<String, dynamic>> questionsAnswers = [
     {
       'question': 'Who scored 100 points in a game?',

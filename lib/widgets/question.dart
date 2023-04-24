@@ -12,7 +12,7 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       height: 80,
       decoration: BoxDecoration(
           color: Colors.amber, borderRadius: BorderRadius.circular(10)),

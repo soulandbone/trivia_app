@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/screens/questions_screen.dart';
-import 'package:trivia_app/widgets/answers.dart';
 
 import '../widgets/category.dart';
 import '../utils/app_styles.dart';
