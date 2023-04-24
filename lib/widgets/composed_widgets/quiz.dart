@@ -22,8 +22,9 @@ class Quiz extends StatelessWidget {
             return Center(
                 child: Answers(
               number: index,
-              answerText:
-                  '${questionsAnswers[0]['options']['${index + 1}']}', // The '0' needs to be dynamic for every new page of trivia
+              optionText: '${questionsAnswers[0]['options']['${index + 1}']}',
+              answer: questionsAnswers[0][
+                  'answer'], // The '0' needs to be dynamic for every new page of trivia
             ));
           },
         ),

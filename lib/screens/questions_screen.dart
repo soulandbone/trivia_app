@@ -15,7 +15,7 @@ class QuestionsScreen extends StatelessWidget {
         '3': 'Magic Johnson',
         '4': 'Tracy McGrady'
       },
-      'answer': '1'
+      'answer': 1
     },
     {
       'question': 'Who scored 60 in his last game in the NBA?',
@@ -25,7 +25,7 @@ class QuestionsScreen extends StatelessWidget {
         '3': 'Kareem Abdul-Jabbar',
         '4': 'Vince Carter'
       },
-      'answer': '1'
+      'answer': 1
     },
   ];
 
