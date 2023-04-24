@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     '4': 'Tracy McGrady'
   };
 
-  final List<Map<String, dynamic>> questions_answers = [
+  final List<Map<String, dynamic>> questionsAnswers = [
     {
       'question': 'Who scored 100 points in a game',
       'answers': {
@@ -71,12 +71,13 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: numbers.length,
+              itemCount: questionsAnswers[0]['answers'].length,
               itemBuilder: (context, index) {
                 return Center(
                     child: Answers(
-                  number: (index),
-                  answerText: '${answers['${index + 1}']}',
+                  number: index,
+                  answerText:
+                      '${questionsAnswers[0]['answers']['${index + 1}']}', //'${answers['${index + 1}']}'
                 ));
               },
             ),

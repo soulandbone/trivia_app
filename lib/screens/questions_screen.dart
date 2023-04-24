@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  static const routeName = '/questions-screen';
+  static const routeName = '/questions-screen'; //add
 
   const QuestionsScreen({super.key});
 
