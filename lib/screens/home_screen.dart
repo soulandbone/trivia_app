@@ -71,13 +71,14 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: questionsAnswers[0]['answers'].length,
+              itemCount: questionsAnswers[0]['answers']
+                  .length, // Need to see how to cycle through all the Questions with every new Screen. Needs to be dynamic
               itemBuilder: (context, index) {
                 return Center(
                     child: Answers(
                   number: index,
                   answerText:
-                      '${questionsAnswers[0]['answers']['${index + 1}']}', //'${answers['${index + 1}']}'
+                      '${questionsAnswers[0]['answers']['${index + 1}']}', // The '0' needs to be dynamic for every new page of trivia
                 ));
               },
             ),
