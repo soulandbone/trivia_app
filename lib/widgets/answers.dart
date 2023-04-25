@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:trivia_app/providers/riverpod.dart';
 
-class Answers extends ConsumerWidget {
+class Answers extends ConsumerStatefulWidget {
   final int number;
   final String optionText;
   final int answer;
@@ -14,6 +14,21 @@ class Answers extends ConsumerWidget {
       required this.answer,
       super.key});
 
+  @override
+  ConsumerState<Answers> createState() => _AnswersState();
+}
+
+class _AnswersState extends ConsumerState<Answers> {
+  bool pressed = false;
+
+  void addPoints(WidgetRef ref) {
+    final quiz = ref.read(quizProvider.notifier);
+    quiz.addPoints();
+    setState(() {
+      pressed = true;
+    });
+  }
+
   List<Icon> icons = const [
     Icon(FontAwesomeIcons.one),
     Icon(FontAwesomeIcons.two),
@@ -21,13 +36,8 @@ class Answers extends ConsumerWidget {
     Icon(FontAwesomeIcons.four),
   ];
 
-  void addPoints(WidgetRef ref) {
-    final quiz = ref.read(quizProvider.notifier);
-    quiz.addPoints();
-  }
-
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       shape: const RoundedRectangleBorder(
@@ -37,10 +47,10 @@ class Answers extends ConsumerWidget {
         onTap: () => addPoints(ref),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: Colors.blue,
+        tileColor: pressed ? Colors.green : Colors.blue,
 
-        leading: icons[number], //Text('$number.'),
-        title: Text(optionText),
+        leading: icons[widget.number], //Text('$number.'),
+        title: Text(widget.optionText),
       ),
     );
   }
