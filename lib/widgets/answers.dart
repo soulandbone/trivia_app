@@ -50,7 +50,6 @@ class _AnswersState extends State<Answers> {
         tileColor:
             pressed ? (correct ? Colors.green : Colors.red) : Colors.blue,
 
-        // Should be that starts with base blue, and then changes to red or green depending on the answer
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),
       ),
