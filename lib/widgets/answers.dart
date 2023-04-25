@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Answers extends StatefulWidget {
+class Answers extends StatelessWidget {
   final int number;
   final String optionText;
   final int answer;
 
-  const Answers(
+  Answers(
       {required this.number,
       required this.optionText,
       required this.answer,
       super.key});
-
-  @override
-  State<Answers> createState() => _AnswersState();
-}
-
-class _AnswersState extends State<Answers> {
-  bool pressed = false;
-  bool correct = false;
 
   List<Icon> icons = const [
     Icon(FontAwesomeIcons.one),
@@ -26,15 +18,6 @@ class _AnswersState extends State<Answers> {
     Icon(FontAwesomeIcons.three),
     Icon(FontAwesomeIcons.four),
   ];
-
-  void checkAnswer(index) {
-    setState(() {
-      pressed = true;
-      if (widget.answer == (index + 1)) {
-        correct = true;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +27,13 @@ class _AnswersState extends State<Answers> {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
-        onTap: () => checkAnswer(widget.number),
+        onTap: () => print(number),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor:
-            pressed ? (correct ? Colors.green : Colors.red) : Colors.blue,
+        tileColor: Colors.blue,
 
-        leading: icons[widget.number], //Text('$number.'),
-        title: Text(widget.optionText),
+        leading: icons[number], //Text('$number.'),
+        title: Text(optionText),
       ),
     );
   }

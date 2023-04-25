@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class QuizzProgress extends StatefulWidget {
+class QuizzProgress extends StatelessWidget {
   const QuizzProgress({super.key});
 
-  @override
-  State<QuizzProgress> createState() => _QuizzProgressState();
-}
-
-class _QuizzProgressState extends State<QuizzProgress> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,15 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../models/quiz.dart';
+import '../models/quiz_model.dart';
 
 final quizProvider =
-    StateNotifierProvider<QuizNotifier, Quiz>((ref) => QuizNotifier());
+    StateNotifierProvider<QuizNotifier, QuizModel>((ref) => QuizNotifier());
 
-class QuizNotifier extends StateNotifier<Quiz> {
+class QuizNotifier extends StateNotifier<QuizModel> {
   //QuizNotifier(super.state);
-  QuizNotifier() : super(const Quiz());
+  QuizNotifier() : super(const QuizModel());
 
   void addPoints() {
     final newPoints = state.currentPoints + 5;
     state = state.copy(currentPoints: newPoints);
   }
+
+  void pressed() {}
 }

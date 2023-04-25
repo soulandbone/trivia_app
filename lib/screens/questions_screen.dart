@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_app/widgets/composed_widgets/quiz.dart';
+
+import '../widgets/composed_widgets/quiz.dart';
 
 class QuestionsScreen extends StatelessWidget {
   static const routeName = '/questions-screen'; //add
