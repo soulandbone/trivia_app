@@ -21,12 +21,12 @@ class QuestionsScreen extends StatelessWidget {
     {
       'question': 'Who scored 60 in his last game in the NBA?',
       'options': {
-        '1': 'Kobe Bryant',
+        '1': 'Kareem',
         '2': 'Larry Bird',
-        '3': 'Kareem Abdul-Jabbar',
+        '3': 'Kobe Bryant',
         '4': 'Vince Carter'
       },
-      'answer': 1
+      'answer': 3
     },
   ];
 

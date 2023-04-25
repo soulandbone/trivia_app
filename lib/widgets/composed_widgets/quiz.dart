@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/widgets/current_points.dart';
@@ -18,7 +17,7 @@ class Quiz extends StatelessWidget {
       QuizzProgress(),
       CurrentPoints(),
       const Gap(120),
-      Center(child: Question(question: '${questionsAnswers[0]['question']}')),
+      Center(child: Question(question: '${questionsAnswers[1]['question']}')),
       Expanded(
         child: ListView.builder(
           itemCount: questionsAnswers[0]['options']
@@ -27,8 +26,8 @@ class Quiz extends StatelessWidget {
             return Center(
                 child: Answers(
               number: index,
-              optionText: '${questionsAnswers[0]['options']['${index + 1}']}',
-              answer: questionsAnswers[0][
+              optionText: '${questionsAnswers[1]['options']['${index + 1}']}',
+              answer: questionsAnswers[1][
                   'answer'], // The '0' needs to be dynamic for every new page of trivia
             ));
           },

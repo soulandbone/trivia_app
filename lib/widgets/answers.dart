@@ -19,13 +19,19 @@ class Answers extends ConsumerStatefulWidget {
 }
 
 class _AnswersState extends ConsumerState<Answers> {
-  bool pressed = false;
+  int pressedCorrect = -1;
 
-  void addPoints(WidgetRef ref) {
+  void checkAnswer(WidgetRef ref) {
     final quiz = ref.read(quizProvider.notifier);
+
     quiz.addPoints();
     setState(() {
-      pressed = true;
+      if ((widget.number + 1) == widget.answer) {
+        // see to do it with enums. More Elegant.
+        pressedCorrect = 0;
+      } else {
+        pressedCorrect = 1;
+      }
     });
   }
 
@@ -44,10 +50,12 @@ class _AnswersState extends ConsumerState<Answers> {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
-        onTap: () => addPoints(ref),
+        onTap: () => checkAnswer(ref),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: pressed ? Colors.green : Colors.blue,
+        tileColor: pressedCorrect == -1
+            ? Colors.blue
+            : (pressedCorrect > 0 ? Colors.red : Colors.green),
 
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),
