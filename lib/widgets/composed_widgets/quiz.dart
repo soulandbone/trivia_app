@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:trivia_app/widgets/current_points.dart';
 import '../quiz_progress.dart';
 
 import '../answers.dart';
@@ -14,6 +15,7 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       QuizzProgress(),
+      CurrentPoints(),
       const Gap(120),
       Center(child: Question(question: '${questionsAnswers[0]['question']}')),
       Expanded(

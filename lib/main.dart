@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trivia_app/screens/questions_screen.dart';
 import 'package:trivia_app/utils/app_styles.dart';
 
 import '../screens/bottom_bar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp())); // Required by RiverPod
 }
 
 class MyApp extends StatelessWidget {
