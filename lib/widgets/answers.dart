@@ -15,7 +15,7 @@ class Answers extends ConsumerStatefulWidget {
       {required this.number,
       required this.optionText,
       required this.answer,
-      this.enabled = true,
+      required this.enabled,
       super.key});
 
   @override
@@ -32,7 +32,7 @@ class _AnswersState extends ConsumerState<Answers> {
       if ((widget.number + 1) == widget.answer) {
         // see to do it with enums. More Elegant.
         options = Options.pressedCorrect;
-        quiz.addPoints();
+        quiz.checkAnswer();
       } else {
         options = Options.pressedWrong;
       }
@@ -54,6 +54,7 @@ class _AnswersState extends ConsumerState<Answers> {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
+        enabled: widget.enabled,
         onTap: options == Options.unpressed
             ? () => checkAnswer(ref)
             : () => print('this happens after the button is pressed'),
