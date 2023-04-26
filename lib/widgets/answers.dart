@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:trivia_app/providers/riverpod.dart';
 
+enum Options { unpressed, pressedCorrect, pressedWrong }
+
 class Answers extends ConsumerStatefulWidget {
   final int number;
   final String optionText;
@@ -19,7 +21,7 @@ class Answers extends ConsumerStatefulWidget {
 }
 
 class _AnswersState extends ConsumerState<Answers> {
-  int pressedCorrect = -1;
+  var options = Options.unpressed;
 
   void checkAnswer(WidgetRef ref) {
     final quiz = ref.read(quizProvider.notifier);
@@ -28,9 +30,9 @@ class _AnswersState extends ConsumerState<Answers> {
     setState(() {
       if ((widget.number + 1) == widget.answer) {
         // see to do it with enums. More Elegant.
-        pressedCorrect = 0;
+        options = Options.pressedCorrect;
       } else {
-        pressedCorrect = 1;
+        options = Options.pressedWrong;
       }
     });
   }
@@ -53,9 +55,9 @@ class _AnswersState extends ConsumerState<Answers> {
         onTap: () => checkAnswer(ref),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: pressedCorrect == -1
+        tileColor: options == Options.unpressed
             ? Colors.blue
-            : (pressedCorrect > 0 ? Colors.red : Colors.green),
+            : (options == Options.pressedCorrect ? Colors.green : Colors.red),
 
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),
