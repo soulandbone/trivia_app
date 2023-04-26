@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:trivia_app/utils/app_styles.dart';
 
 class CustomTile extends StatelessWidget {
+  // base widget to hold the points and ranking of a player
   final String text1;
   final String text2;
   final Icon icon;

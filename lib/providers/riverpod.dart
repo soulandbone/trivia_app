@@ -6,7 +6,7 @@ final quizProvider =
 
 class QuizNotifier extends StateNotifier<QuizModel> {
   //QuizNotifier(super.state);
-  QuizNotifier() : super(const QuizModel());
+  QuizNotifier() : super(QuizModel());
 
   void addPoints() {
     final newPoints = state.currentPoints + 5;

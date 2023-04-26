@@ -14,8 +14,8 @@ class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      QuizzProgress(),
-      CurrentPoints(),
+      const QuizzProgress(),
+      const CurrentPoints(),
       const Gap(120),
       Center(child: Question(question: '${questionsAnswers[1]['question']}')),
       Expanded(
