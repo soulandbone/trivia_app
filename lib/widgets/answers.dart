@@ -32,9 +32,10 @@ class _AnswersState extends ConsumerState<Answers> {
       if ((widget.number + 1) == widget.answer) {
         // see to do it with enums. More Elegant.
         options = Options.pressedCorrect;
-        quiz.checkAnswer();
+        quiz.correctAnswer();
       } else {
         options = Options.pressedWrong;
+        quiz.wrongAnswer();
       }
     });
   }
@@ -55,9 +56,7 @@ class _AnswersState extends ConsumerState<Answers> {
       elevation: 8,
       child: ListTile(
         enabled: widget.enabled,
-        onTap: options == Options.unpressed
-            ? () => checkAnswer(ref)
-            : () => print('this happens after the button is pressed'),
+        onTap: () => checkAnswer(ref),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         tileColor: options == Options.unpressed

@@ -4,7 +4,7 @@ class QuizModel {
   final bool questionsEnabled;
 
   const QuizModel(
-      {this.currentPage = 1,
+      {this.currentPage = 0,
       this.currentPoints = 0,
       this.questionsEnabled =
           true}); //initialize State, Quiz is immutable because of final fields.

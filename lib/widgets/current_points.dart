@@ -7,13 +7,13 @@ class CurrentPoints extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final quiz = ref.watch(quizProvider);
+    final quizData = ref.watch(quizProvider);
 
     return Container(
       padding: const EdgeInsets.all(12),
       height: 50,
       decoration: const BoxDecoration(color: Colors.amberAccent),
-      child: Text('Points: ${quiz.currentPoints}'),
+      child: Text('Points: ${quizData.currentPoints}'),
     );
   }
 }
