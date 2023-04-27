@@ -8,7 +8,7 @@ class QuizzProgress extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(top: 15),
       child: const LinearProgressIndicator(
-        minHeight: 20,
+        minHeight: 10,
         color: Colors.amber,
         value: 0.15,
       ),

@@ -36,7 +36,7 @@ class QuestionsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Questions'),
       ),
-      body: Quiz(questionsAnswers: questionsAnswers),
+      body: Quiz(questionIndex: 0, questionsAnswers: questionsAnswers),
     );
   }
 }
