@@ -25,14 +25,6 @@ class _QuizState extends ConsumerState<Quiz> {
     });
   }
 
-  void ChangeColor(Options options) {
-    options = Options.unpressed;
-  }
-
-  void resetColors(Options options) {
-    Options options = Options.unpressed;
-  }
-
   // change it so that its not needed in the constructor
   @override
   Widget build(BuildContext context) {

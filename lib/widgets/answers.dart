@@ -11,7 +11,7 @@ class Answers extends ConsumerStatefulWidget {
   final int answer;
   final bool enabled;
 
-  Answers(
+  const Answers(
       {required this.number,
       required this.optionText,
       required this.answer,
@@ -23,18 +23,19 @@ class Answers extends ConsumerStatefulWidget {
 }
 
 class _AnswersState extends ConsumerState<Answers> {
-  var options = Options.unpressed;
+  //Options options = Options.unpressed;
+  bool pressed = false;
   void checkAnswer() {
     final quiz = ref.read(quizProvider.notifier);
 
     setState(() {
       if ((widget.number + 1) == widget.answer) {
         // see to do it with enums. More Elegant.
-        options = Options.pressedCorrect;
         quiz.correctAnswer();
+        pressed = true;
       } else {
-        options = Options.pressedWrong;
-        quiz.wrongAnswer();
+        //quiz.wrongAnswer();
+        pressed = true;
       }
     });
   }
@@ -48,19 +49,18 @@ class _AnswersState extends ConsumerState<Answers> {
 
   @override
   Widget build(BuildContext context) {
+    print('Build Method is ON');
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
-        enabled: widget.enabled,
+        //enabled: widget.enabled,
         onTap: () => checkAnswer(),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: options == Options.unpressed
-            ? Colors.blue
-            : (options == Options.pressedCorrect ? Colors.green : Colors.red),
+        tileColor: !pressed ? Colors.blue : Colors.green,
 
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),

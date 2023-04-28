@@ -1,13 +1,15 @@
+import '../widgets/answers.dart';
+
 class QuizModel {
   final int currentPage;
   final int currentPoints;
   final bool questionsEnabled;
 
-  const QuizModel(
-      {this.currentPage = 0,
-      this.currentPoints = 0,
-      this.questionsEnabled =
-          true}); //initialize State, Quiz is immutable because of final fields.
+  const QuizModel({
+    this.currentPage = 0,
+    this.currentPoints = 0,
+    this.questionsEnabled = true,
+  }); //initialize State, Quiz is immutable because of final fields.
 
   QuizModel copy(
           {int? currentPage, int? currentPoints, bool? questionsEnabled}) =>

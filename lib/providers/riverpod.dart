@@ -12,7 +12,9 @@ class QuizNotifier extends StateNotifier<QuizModel> {
   void correctAnswer() {
     final newPoints = state.currentPoints + 5;
 
-    state = state.copy(currentPoints: newPoints, questionsEnabled: false);
+    state = state.copy(
+      currentPoints: newPoints,
+    );
   }
 
   void wrongAnswer() {
