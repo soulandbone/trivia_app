@@ -24,8 +24,7 @@ class Answers extends ConsumerStatefulWidget {
 
 class _AnswersState extends ConsumerState<Answers> {
   var options = Options.unpressed;
-
-  void checkAnswer(WidgetRef ref) {
+  void checkAnswer() {
     final quiz = ref.read(quizProvider.notifier);
 
     setState(() {
@@ -56,7 +55,7 @@ class _AnswersState extends ConsumerState<Answers> {
       elevation: 8,
       child: ListTile(
         enabled: widget.enabled,
-        onTap: () => checkAnswer(ref),
+        onTap: () => checkAnswer(),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
         tileColor: options == Options.unpressed

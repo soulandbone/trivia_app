@@ -8,18 +8,35 @@ import '../quiz_progress.dart';
 import '../answers.dart';
 import '../question.dart';
 
-class Quiz extends ConsumerWidget {
+class Quiz extends ConsumerStatefulWidget {
   // has to be updated to be a ConsumerStatefulWidget
   final List<Map<String, dynamic>> questionsAnswers;
 
-  Quiz(
-      {required this.questionsAnswers,
-      super.key}); // change it so that its not needed in the constructor
-
+  Quiz({required this.questionsAnswers, super.key});
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final quizData = ref.watch(quizProvider);
+  ConsumerState<Quiz> createState() => _QuizState();
+}
+
+class _QuizState extends ConsumerState<Quiz> {
+  void nextPage() {
     final quizReader = ref.read(quizProvider.notifier);
+    setState(() {
+      quizReader.nextQuestion();
+    });
+  }
+
+  void ChangeColor(Options options) {
+    options = Options.unpressed;
+  }
+
+  void resetColors(Options options) {
+    Options options = Options.unpressed;
+  }
+
+  // change it so that its not needed in the constructor
+  @override
+  Widget build(BuildContext context) {
+    final quizData = ref.watch(quizProvider);
 
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       const Gap(40),
@@ -32,18 +49,18 @@ class Quiz extends ConsumerWidget {
       Center(
           child: Question(
               question:
-                  '${questionsAnswers[quizData.currentPage]['question']}')),
+                  '${widget.questionsAnswers[quizData.currentPage]['question']}')),
       Expanded(
         child: ListView.builder(
-          itemCount: questionsAnswers[quizData.currentPage]['options']
+          itemCount: widget.questionsAnswers[quizData.currentPage]['options']
               .length, // Need to see how to cycle through all the Questions with every new Screen. Needs to be dynamic
           itemBuilder: (context, index) {
             return Center(
                 child: Answers(
               number: index,
               optionText:
-                  '${questionsAnswers[quizData.currentPage]['options']['${index + 1}']}',
-              answer: questionsAnswers[quizData.currentPage]['answer'],
+                  '${widget.questionsAnswers[quizData.currentPage]['options']['${index + 1}']}',
+              answer: widget.questionsAnswers[quizData.currentPage]['answer'],
               enabled: quizData
                   .questionsEnabled, // The '0' needs to be dynamic for every new page of trivia
             ));
@@ -53,7 +70,7 @@ class Quiz extends ConsumerWidget {
       TextButton(
           style: const ButtonStyle(
               backgroundColor: MaterialStatePropertyAll(Colors.amber)),
-          onPressed: () => quizReader.nextQuestion,
+          onPressed: () => nextPage(),
           child: const Text('Next'))
     ]);
   }

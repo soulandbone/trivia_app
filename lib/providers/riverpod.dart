@@ -22,6 +22,6 @@ class QuizNotifier extends StateNotifier<QuizModel> {
   void nextQuestion() {
     final newPage = state.currentPage + 1;
 
-    state = state.copy(currentPage: newPage);
+    state = state.copy(currentPage: newPage, questionsEnabled: true);
   }
 }
