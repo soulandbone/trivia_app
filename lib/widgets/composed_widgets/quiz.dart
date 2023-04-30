@@ -49,9 +49,9 @@ class _QuizState extends ConsumerState<Quiz> {
           itemBuilder: (context, index) {
             return Center(
                 child: Answers(
-              number: index,
+              number: index, // [0...3]
               optionText:
-                  '${widget.questionsAnswers[quizData.currentPage]['options']['${index + 1}']}',
+                  '${widget.questionsAnswers[quizData.currentPage]['options']['$index']}', //because the map has keys
               answer: widget.questionsAnswers[quizData.currentPage]['answer'],
               enabled: quizData.questionsEnabled,
               pressed: quizData.pressed[

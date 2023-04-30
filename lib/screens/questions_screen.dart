@@ -11,22 +11,22 @@ class QuestionsScreen extends StatelessWidget {
     {
       'question': 'Who scored 100 points in a game?',
       'options': {
-        '1': 'Wilt Chamberlain',
-        '2': 'Dominique Wilkins',
-        '3': 'Magic Johnson',
-        '4': 'Tracy McGrady'
+        '0': 'Wilt Chamberlain',
+        '1': 'Dominique Wilkins',
+        '2': 'Magic Johnson',
+        '3': 'Tracy McGrady'
       },
-      'answer': 1
+      'answer': 0
     },
     {
       'question': 'Who scored 60 in his last game in the NBA?',
       'options': {
-        '1': 'Kareem',
-        '2': 'Larry Bird',
-        '3': 'Kobe Bryant',
-        '4': 'Vince Carter'
+        '0': 'Kareem',
+        '1': 'Larry Bird',
+        '2': 'Kobe Bryant',
+        '3': 'Vince Carter'
       },
-      'answer': 3
+      'answer': 2
     },
   ];
 

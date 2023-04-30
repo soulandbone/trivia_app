@@ -18,11 +18,18 @@ class QuizNotifier extends StateNotifier<QuizModel> {
       return false;
     });
 
-    state = state.copy(currentPoints: newPoints, pressed: booleans);
+    state = state.copy(
+        currentPoints: newPoints, pressed: booleans, questionsEnabled: false);
   }
 
-  void wrongAnswer() {
-    state = state.copy(questionsEnabled: false);
+  void wrongAnswer(int i) {
+    List<bool> booleans = List.generate(4, (index) {
+      if (index == i) {
+        return true;
+      }
+      return false;
+    });
+    state = state.copy(pressed: booleans, questionsEnabled: false);
   }
 
   void nextQuestion() {
