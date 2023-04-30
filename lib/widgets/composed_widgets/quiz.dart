@@ -52,7 +52,9 @@ class _QuizState extends ConsumerState<Quiz> {
               number: index, // [0...3]
               optionText:
                   '${widget.questionsAnswers[quizData.currentPage]['options']['$index']}', //because the map has keys
-              answer: widget.questionsAnswers[quizData.currentPage]['answer'],
+              correctAnswer: widget.questionsAnswers[quizData.currentPage]
+                      ['answer'] ==
+                  index,
               enabled: quizData.questionsEnabled,
               pressed: quizData.pressed[
                   index], // The '0' needs to be dynamic for every new page of trivia            // IDEA, MAKE IT A LIST OF BOOLEANS, IT CHANGES DEPENDING ON THE INDEXS

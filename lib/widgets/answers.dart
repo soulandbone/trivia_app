@@ -8,15 +8,16 @@ enum Options { unpressed, pressedCorrect, pressedWrong }
 class Answers extends ConsumerStatefulWidget {
   final int number; //[0,1,2,3]
   final String optionText;
-  final int
-      answer; // change the logic so that we know already if this answer is the correct or not
+  //final int answer; // change the logic so that we know already if this answer is the correct or not
+  final bool correctAnswer;
   final bool enabled;
   final bool pressed;
 
   const Answers(
       {required this.number,
       required this.optionText,
-      required this.answer,
+      required this.correctAnswer,
+      // required this.answer,
       required this.enabled,
       required this.pressed,
       super.key});
@@ -32,7 +33,7 @@ class _AnswersState extends ConsumerState<Answers> {
     final quiz = ref.read(quizProvider.notifier);
 
     setState(() {
-      if ((widget.number) == widget.answer) {
+      if (widget.correctAnswer) {
         quiz.correctAnswer(number);
         correctOption = true;
       } else {
@@ -58,7 +59,7 @@ class _AnswersState extends ConsumerState<Answers> {
           borderRadius: BorderRadius.all(Radius.circular(10))),
       elevation: 8,
       child: ListTile(
-        enabled: widget.enabled,
+        //enabled: widget.enabled,
         onTap: () => checkAnswer(widget.number),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
