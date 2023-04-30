@@ -10,9 +10,15 @@ class CurrentPoints extends ConsumerWidget {
     final quizData = ref.watch(quizProvider);
 
     return Container(
+      margin: const EdgeInsets.only(right: 12),
       padding: const EdgeInsets.all(12),
-      height: 50,
-      decoration: const BoxDecoration(color: Colors.amberAccent),
+      height: 70,
+      width: 70,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.amberAccent,
+        //borderRadius: BorderRadius.all(Radius.circular(10))
+      ),
       child: Text('Points: ${quizData.currentPoints}'),
     );
   }

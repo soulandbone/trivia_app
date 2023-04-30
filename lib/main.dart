@@ -25,3 +25,10 @@ class MyApp extends StatelessWidget {
         home: const BottomBar());
   }
 }
+
+
+/*
+  Changes to add: Points display, make it look better, progress bar showing how many questions of the total questions have been displayed, last page after all the questions have been done, timer (one of the last implementations to be done)
+
+
+*/

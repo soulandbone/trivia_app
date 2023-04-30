@@ -20,14 +20,6 @@ class CustomTile extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       width: 130,
       decoration: BoxDecoration(
-          //border: Border.all(width: 1, color: Colors.white),
-          // boxShadow: [
-          //   BoxShadow(
-          //       color: Colors.grey.withOpacity(0.5),
-          //       spreadRadius: 3,
-          //       blurRadius: 8,
-          //       offset: const Offset(3, 3)),
-          // ],
           color: AppStyles.cardBgColor,
           borderRadius: BorderRadius.circular(15)),
       child: Row(

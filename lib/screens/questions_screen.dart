@@ -28,6 +28,16 @@ class QuestionsScreen extends StatelessWidget {
       },
       'answer': 2
     },
+    {
+      'question': 'What team started in Minnesota and is now in California?',
+      'options': {
+        '0': 'Sacramento Kings',
+        '1': 'Golden State Warriors',
+        '2': 'Los Angeles Clippers',
+        '3': 'Los Angeles Lakers'
+      },
+      'answer': 3
+    },
   ];
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/providers/riverpod.dart';
+import 'package:trivia_app/utils/app_styles.dart';
 import 'package:trivia_app/widgets/current_points.dart';
 
 import '../quiz_progress.dart';
@@ -32,12 +33,24 @@ class _QuizState extends ConsumerState<Quiz> {
 
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       const Gap(40),
+      Align(
+          alignment: Alignment.centerLeft,
+          child: RichText(
+            text: TextSpan(style: AppStyles.title, children: [
+              const TextSpan(text: 'Question '),
+              TextSpan(text: '${quizData.currentPage + 1}/'),
+              TextSpan(
+                  text: (widget.questionsAnswers.length).toString(),
+                  style: AppStyles.title.copyWith(color: Colors.grey))
+            ]),
+          )),
       const QuizzProgress(),
+      const Gap(15),
       const Align(
         alignment: Alignment.centerRight,
         child: CurrentPoints(),
       ),
-      const Gap(120),
+      const Gap(60),
       Center(
           child: Question(
               question:
@@ -62,11 +75,14 @@ class _QuizState extends ConsumerState<Quiz> {
           },
         ),
       ),
-      TextButton(
-          style: const ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(Colors.amber)),
-          onPressed: () => nextPage(),
-          child: const Text('Next'))
+      SizedBox(
+        width: double.infinity,
+        child: TextButton(
+            style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Colors.amber)),
+            onPressed: () => nextPage(),
+            child: const Text('Next')),
+      )
     ]);
   }
 }
