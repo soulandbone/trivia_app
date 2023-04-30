@@ -10,12 +10,14 @@ class Answers extends ConsumerStatefulWidget {
   final String optionText;
   final int answer;
   final bool enabled;
+  final bool pressed;
 
   const Answers(
       {required this.number,
       required this.optionText,
       required this.answer,
       required this.enabled,
+      required this.pressed,
       super.key});
 
   @override
@@ -24,18 +26,16 @@ class Answers extends ConsumerStatefulWidget {
 
 class _AnswersState extends ConsumerState<Answers> {
   //Options options = Options.unpressed;
-  bool pressed = false;
-  void checkAnswer() {
+
+  void checkAnswer(number) {
     final quiz = ref.read(quizProvider.notifier);
 
     setState(() {
       if ((widget.number + 1) == widget.answer) {
         // see to do it with enums. More Elegant.
-        quiz.correctAnswer();
-        pressed = true;
+        quiz.correctAnswer(number);
       } else {
         //quiz.wrongAnswer();
-        pressed = true;
       }
     });
   }
@@ -57,10 +57,10 @@ class _AnswersState extends ConsumerState<Answers> {
       elevation: 8,
       child: ListTile(
         //enabled: widget.enabled,
-        onTap: () => checkAnswer(),
+        onTap: () => checkAnswer(widget.number),
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        tileColor: !pressed ? Colors.blue : Colors.green,
+        tileColor: !widget.pressed ? Colors.blue : Colors.green,
 
         leading: icons[widget.number], //Text('$number.'),
         title: Text(widget.optionText),

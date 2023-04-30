@@ -53,8 +53,9 @@ class _QuizState extends ConsumerState<Quiz> {
               optionText:
                   '${widget.questionsAnswers[quizData.currentPage]['options']['${index + 1}']}',
               answer: widget.questionsAnswers[quizData.currentPage]['answer'],
-              enabled: quizData
-                  .questionsEnabled, // The '0' needs to be dynamic for every new page of trivia
+              enabled: quizData.questionsEnabled,
+              pressed: quizData.pressed[
+                  index], // The '0' needs to be dynamic for every new page of trivia            // IDEA, MAKE IT A LIST OF BOOLEANS, IT CHANGES DEPENDING ON THE INDEXS
             ));
           },
         ),
