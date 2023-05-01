@@ -1,6 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:trivia_app/screens/quiz_end.dart';
+import 'package:trivia_app/widgets/composed_widgets/quiz.dart';
 
 import '../models/quiz_model.dart';
+import '../screens/questions_screen.dart';
 
 final quizProvider =
     StateNotifierProvider<QuizNotifier, QuizModel>((ref) => QuizNotifier());
@@ -32,12 +36,16 @@ class QuizNotifier extends StateNotifier<QuizModel> {
     state = state.copy(pressed: booleans, questionsEnabled: false);
   }
 
-  void nextQuestion() {
+  void nextQuestion(BuildContext context, String routeName) {
     final newPage = state.currentPage + 1;
 
-    state = state.copy(
-        currentPage: newPage,
-        questionsEnabled: true,
-        pressed: [false, false, false, false]);
+    if (newPage > 2) {
+      Navigator.of(context).pushNamed(routeName);
+    } else {
+      state = state.copy(
+          currentPage: newPage,
+          questionsEnabled: true,
+          pressed: [false, false, false, false]);
+    }
   }
 }

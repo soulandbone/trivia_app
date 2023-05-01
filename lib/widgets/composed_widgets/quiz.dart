@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/providers/riverpod.dart';
+import 'package:trivia_app/screens/quiz_end.dart';
 import 'package:trivia_app/utils/app_styles.dart';
 import 'package:trivia_app/widgets/current_points.dart';
 
@@ -22,7 +23,7 @@ class _QuizState extends ConsumerState<Quiz> {
   void nextPage() {
     final quizReader = ref.read(quizProvider.notifier);
     setState(() {
-      quizReader.nextQuestion();
+      quizReader.nextQuestion(context, QuizEnd.routeName);
     });
   }
 
@@ -44,7 +45,7 @@ class _QuizState extends ConsumerState<Quiz> {
                   style: AppStyles.title.copyWith(color: Colors.grey))
             ]),
           )),
-      const QuizzProgress(),
+      QuizzProgress(questionsAnswers: widget.questionsAnswers),
       const Gap(15),
       const Align(
         alignment: Alignment.centerRight,

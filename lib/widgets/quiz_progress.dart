@@ -4,7 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/riverpod.dart';
 
 class QuizzProgress extends ConsumerWidget {
-  const QuizzProgress({super.key});
+  final List<Map<String, dynamic>> questionsAnswers;
+  const QuizzProgress({required this.questionsAnswers, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,7 +16,7 @@ class QuizzProgress extends ConsumerWidget {
       child: LinearProgressIndicator(
         minHeight: 10,
         color: Colors.amber,
-        value: (quizData.currentPage + 1) / 3,
+        value: (quizData.currentPage + 1) / questionsAnswers.length,
       ),
     );
   }

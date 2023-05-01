@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trivia_app/providers/riverpod.dart';
+import 'package:trivia_app/utils/app_styles.dart';
 
 class CurrentPoints extends ConsumerWidget {
   const CurrentPoints({super.key});
@@ -12,14 +13,17 @@ class CurrentPoints extends ConsumerWidget {
     return Container(
       margin: const EdgeInsets.only(right: 12),
       padding: const EdgeInsets.all(12),
-      height: 70,
-      width: 70,
+      height: 50,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.amberAccent,
         //borderRadius: BorderRadius.all(Radius.circular(10))
       ),
-      child: Text('Points: ${quizData.currentPoints}'),
+      child: Text(
+        '${quizData.currentPoints}',
+        textAlign: TextAlign.center,
+        style: AppStyles.title,
+      ),
     );
   }
 }
