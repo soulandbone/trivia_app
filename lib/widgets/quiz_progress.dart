@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:trivia_app/utils/app_styles.dart';
 
 import '../providers/riverpod.dart';
 
@@ -15,7 +16,8 @@ class QuizzProgress extends ConsumerWidget {
       margin: const EdgeInsets.only(top: 15),
       child: LinearProgressIndicator(
         minHeight: 10,
-        color: Colors.amber,
+        backgroundColor: Colors.black,
+        color: AppStyles.turquoise,
         value: (quizData.currentPage + 1) / questionsAnswers.length,
       ),
     );

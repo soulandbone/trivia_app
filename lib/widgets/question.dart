@@ -9,10 +9,13 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-      height: 80,
+      height: 110,
       decoration: BoxDecoration(
-          color: Colors.amber, borderRadius: BorderRadius.circular(10)),
+          color: AppStyles.cardBgColor,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: AppStyles.turquoise)),
       child: Text(
         textAlign: TextAlign.center,
         question,

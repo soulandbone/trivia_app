@@ -6,7 +6,7 @@ class QuizEnd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(child: Text('End of Quiz, results, bla bla')),
     );
   }

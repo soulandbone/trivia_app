@@ -51,7 +51,7 @@ class _QuizState extends ConsumerState<Quiz> {
         alignment: Alignment.centerRight,
         child: CurrentPoints(),
       ),
-      const Gap(60),
+      const Gap(40),
       Center(
           child: Question(
               question:
@@ -80,9 +80,13 @@ class _QuizState extends ConsumerState<Quiz> {
         width: double.infinity,
         child: TextButton(
             style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(Colors.amber)),
+                backgroundColor: MaterialStatePropertyAll(Colors.black38)),
             onPressed: () => nextPage(),
-            child: const Text('Next')),
+            child: Text(
+              'Next',
+              style:
+                  AppStyles.cardSubTitle.copyWith(color: AppStyles.turquoise),
+            )),
       )
     ]);
   }

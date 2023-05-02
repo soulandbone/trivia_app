@@ -16,13 +16,13 @@ class CurrentPoints extends ConsumerWidget {
       height: 50,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        color: Colors.amberAccent,
+        color: AppStyles.cardBgColor,
         //borderRadius: BorderRadius.all(Radius.circular(10))
       ),
       child: Text(
         '${quizData.currentPoints}',
         textAlign: TextAlign.center,
-        style: AppStyles.title,
+        style: AppStyles.title.copyWith(color: AppStyles.turquoise),
       ),
     );
   }
