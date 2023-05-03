@@ -6,6 +6,7 @@ class AppStyles {
       0xff22252d); //the one I was using on Calculator, just to use in the Theme to see how it changes
   static const Color cardBgColor = Color.fromRGBO(79, 84, 100, 1);
   static const Color turquoise = Color.fromRGBO(0, 218, 219, 1);
+  static const Color lightBlue = Color.fromRGBO(62, 184, 212, 1);
 
   static const TextStyle title =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white);
