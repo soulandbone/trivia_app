@@ -7,6 +7,7 @@ class AppStyles {
   static const Color cardBgColor = Color.fromRGBO(79, 84, 100, 1);
   static const Color turquoise = Color.fromRGBO(0, 218, 219, 1);
   static const Color lightBlue = Color.fromRGBO(62, 184, 212, 1);
+  static const Color grey50 = Color.fromRGBO(50, 50, 50, 1);
 
   static const TextStyle title =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white);
