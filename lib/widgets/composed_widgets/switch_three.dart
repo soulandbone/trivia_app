@@ -3,7 +3,15 @@ import 'package:trivia_app/utils/app_styles.dart';
 import 'package:trivia_app/widgets/custom_button.dart';
 
 class SwitchThree extends StatefulWidget {
-  const SwitchThree({super.key});
+  String button1Text;
+  String button2Text;
+  String button3Text;
+
+  SwitchThree(
+      {required this.button1Text,
+      required this.button2Text,
+      required this.button3Text,
+      super.key});
 
   @override
   State<SwitchThree> createState() => _SwitchThreeState();
@@ -14,10 +22,20 @@ class _SwitchThreeState extends State<SwitchThree> {
 
   @override
   Widget build(BuildContext context) {
-    onPress(int index) {
+    onPress(String text) {
+      int index;
+      if (widget.button1Text == text) {
+        index = 0;
+      } else if (widget.button2Text == text) {
+        index = 1;
+      } else {
+        index = 2;
+      }
+
       setState(() {
         currentIndex = index;
       });
+      print('The text is $text');
     }
 
     return Container(
@@ -27,19 +45,16 @@ class _SwitchThreeState extends State<SwitchThree> {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         CustomButton(
             callback: onPress,
-            id: 0,
-            text: 'All time',
+            text: widget.button1Text,
             pressed: currentIndex == 0 ? true : false),
         CustomButton(
           callback: onPress,
-          text: 'This week',
-          id: 1,
+          text: widget.button2Text,
           pressed: currentIndex == 1 ? true : false,
         ),
         CustomButton(
           callback: onPress,
-          text: 'Month',
-          id: 2,
+          text: widget.button3Text,
           pressed: currentIndex == 2 ? true : false,
         )
       ]),

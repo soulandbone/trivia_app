@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:trivia_app/utils/app_styles.dart';
 
 class CustomButton extends StatelessWidget {
-  final int id;
   final String text;
   final bool pressed;
   Function callback;
 
   CustomButton(
-      {required this.id,
-      required this.text,
+      {required this.text,
       required this.pressed,
       required this.callback,
       super.key});
@@ -26,7 +24,7 @@ class CustomButton extends StatelessWidget {
             color: pressed ? AppStyles.lightBlue : AppStyles.grey50,
             borderRadius: BorderRadius.circular(10)),
         child: TextButton(
-          onPressed: () => callback(id),
+          onPressed: () => callback(text),
           child: Text(
             text,
             style: const TextStyle(color: Colors.white),

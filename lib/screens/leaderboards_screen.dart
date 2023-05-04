@@ -9,6 +9,10 @@ class LeaderBoardsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: const Text('Leaderboards')),
-        body: const SwitchThree());
+        body: SwitchThree(
+          button1Text: 'All Time',
+          button2Text: 'Month',
+          button3Text: 'Week',
+        ));
   }
 }
