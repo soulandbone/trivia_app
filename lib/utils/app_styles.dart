@@ -8,6 +8,8 @@ class AppStyles {
   static const Color turquoise = Color.fromRGBO(0, 218, 219, 1);
   static const Color lightBlue = Color.fromRGBO(62, 184, 212, 1);
   static const Color grey50 = Color.fromRGBO(50, 50, 50, 1);
+  static const Color leftGradient = Color.fromRGBO(12, 109, 130, 1);
+  static const Color rightGradient = Color.fromRGBO(12, 104, 125, 1);
 
   static const TextStyle title =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white);

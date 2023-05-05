@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/utils/app_styles.dart';
@@ -10,25 +12,36 @@ class LeaderBoardsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        const Gap(40),
-        const Text(
-          'Leaderboards',
-          style: AppStyles.title,
-        ),
-        SwitchThree(
-            button1Text: 'All Time', button2Text: 'Month', button3Text: 'Week'),
-        const Gap(110),
-        Container(
-          height: 500,
+        appBar: AppBar(
+            flexibleSpace: Container(
           decoration: const BoxDecoration(
-              color: AppStyles.grey50,
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(200),
-                  topRight: Radius.circular(200))),
-        )
-      ],
-    ));
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  colors: [Colors.red, Colors.blue])),
+        )),
+        body: Column(
+          children: [
+            const Gap(40),
+            const Text(
+              'Leaderboards',
+              style: AppStyles.title,
+            ),
+            SwitchThree(
+                button1Text: 'All Time',
+                button2Text: 'Month',
+                button3Text: 'Week'),
+            const Gap(110),
+            Container(
+              height: 430,
+              //child: ListView(),
+              decoration: const BoxDecoration(
+                  color: AppStyles.grey50,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(200),
+                      topRight: Radius.circular(200))),
+            )
+          ],
+        ));
   }
 }
