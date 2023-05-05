@@ -17,7 +17,7 @@ class LeaderBoardsScreen extends StatelessWidget {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Colors.red, Colors.blue])),
+              colors: [AppStyles.leftGradient, AppStyles.rightGradient])),
       child: Column(
         children: [
           const Gap(40),
