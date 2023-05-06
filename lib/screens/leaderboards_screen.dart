@@ -44,11 +44,13 @@ class LeaderBoardsScreen extends StatelessWidget {
                   rank: 4,
                   userName: 'Ryan',
                   imageUrl: 'assets/images/sports.jpg',
+                  score: 128000,
                 ),
                 LeaderBoardsTile(
                   rank: 2,
                   userName: 'Darian',
                   imageUrl: 'assets/images/sports.jpg',
+                  score: 164000,
                 ),
               ]),
             ),
