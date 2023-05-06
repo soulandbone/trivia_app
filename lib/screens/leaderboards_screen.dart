@@ -35,8 +35,8 @@ class LeaderBoardsScreen extends StatelessWidget {
             decoration: const BoxDecoration(
                 color: AppStyles.grey50,
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(200),
-                    topRight: Radius.circular(200))),
+                    topLeft: Radius.elliptical(150, 50),
+                    topRight: Radius.elliptical(150, 50))),
             child: Container(
               height: 100,
               child: ListView(children: const [

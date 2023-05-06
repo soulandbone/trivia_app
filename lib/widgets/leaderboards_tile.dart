@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:trivia_app/utils/app_styles.dart';
+
 import 'package:trivia_app/widgets/custom_leading.dart';
 
 class LeaderBoardsTile extends StatelessWidget {
@@ -15,14 +16,17 @@ class LeaderBoardsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      color: Colors.amber,
-      child: Card(
-        child: ListTile(
-          tileColor: Colors.red,
-          leading: CustomLeading(rank: rank, imageUrl: imageUrl),
-          title: Text(userName),
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+      color: Colors.transparent,
+      child: ListTile(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        tileColor: AppStyles.bgColor,
+        leading: CustomLeading(rank: rank, imageUrl: imageUrl),
+        title: Text(
+          userName,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

@@ -29,12 +29,12 @@ class QuestionsScreen extends StatelessWidget {
       'answer': 2
     },
     {
-      'question': 'What is the favorite language of Anthea?',
+      'question': 'Which team was in Minnesotta and is now in Los Angeles?',
       'options': {
-        '0': 'Mandarin',
-        '1': 'Cambodian',
-        '2': 'French',
-        '3': 'German'
+        '0': 'Golden State Warriors',
+        '1': 'Sacramento Kings',
+        '2': 'Los Angeles Clippers',
+        '3': 'Los Angeles Lakers'
       },
       'answer': 3
     },
