@@ -1,8 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/utils/app_styles.dart';
+import 'package:trivia_app/widgets/leaderboards_tile.dart';
 
 import '../widgets/composed_widgets/switch_three.dart';
 
@@ -38,6 +37,21 @@ class LeaderBoardsScreen extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(200),
                     topRight: Radius.circular(200))),
+            child: Container(
+              height: 100,
+              child: ListView(children: const [
+                LeaderBoardsTile(
+                  rank: 4,
+                  userName: 'Ryan',
+                  imageUrl: 'assets/images/sports.jpg',
+                ),
+                LeaderBoardsTile(
+                  rank: 2,
+                  userName: 'Darian',
+                  imageUrl: 'assets/images/sports.jpg',
+                ),
+              ]),
+            ),
           )
         ],
       ),

@@ -29,12 +29,12 @@ class QuestionsScreen extends StatelessWidget {
       'answer': 2
     },
     {
-      'question': 'What team started in Minnesota and is now in California?',
+      'question': 'What is the favorite language of Anthea?',
       'options': {
-        '0': 'Sacramento Kings',
-        '1': 'Golden State Warriors',
-        '2': 'Los Angeles Clippers',
-        '3': 'Los Angeles Lakers'
+        '0': 'Mandarin',
+        '1': 'Cambodian',
+        '2': 'French',
+        '3': 'German'
       },
       'answer': 3
     },
