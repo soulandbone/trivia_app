@@ -30,7 +30,10 @@ class LeaderBoardsScreen extends StatelessWidget {
                 button1Text: 'All Time',
                 button2Text: 'Month',
                 button3Text: 'Week'),
-            PodiumAvatar(),
+            PodiumAvatar(
+              profileImage: 'assets/images/profile_1.jpg',
+              rank: 1,
+            ),
             Container(
               height: 510,
               //child: ListView(),
