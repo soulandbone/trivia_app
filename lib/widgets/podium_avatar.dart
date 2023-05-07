@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
 class PodiumAvatar extends StatelessWidget {
   final String profileImage;
@@ -10,9 +12,27 @@ class PodiumAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 70,
-      foregroundImage: AssetImage(profileImage),
+    return SizedBox(
+      height: 160,
+      child: Column(children: [
+        SvgPicture.asset('assets/images/crown1.svg', height: 20),
+        Stack(
+          children: [
+            CircleAvatar(
+              radius: 50,
+              foregroundImage: AssetImage(profileImage),
+            ),
+            const Positioned(
+              bottom: -10,
+              left: 38,
+              child: CircleAvatar(
+                radius: 12,
+                child: Text('2'),
+              ),
+            )
+          ],
+        ),
+      ]),
     );
   }
 }
