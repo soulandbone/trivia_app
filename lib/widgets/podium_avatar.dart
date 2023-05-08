@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gap/gap.dart';
 
 class PodiumAvatar extends StatelessWidget {
   final String profileImage;
@@ -12,27 +11,51 @@ class PodiumAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 160,
-      child: Column(children: [
-        SvgPicture.asset('assets/images/crown1.svg', height: 20),
-        Stack(
-          children: [
-            CircleAvatar(
+    return Container(
+        height: 150,
+        width: 100,
+        child: Stack(children: [
+          const Positioned(
+            top: 25,
+            child: CircleAvatar(
+              foregroundImage: AssetImage(
+                'assets/images/profile_1.jpg',
+              ),
               radius: 50,
-              foregroundImage: AssetImage(profileImage),
             ),
-            const Positioned(
-              bottom: -10,
-              left: 38,
+          ),
+          Positioned(
+              left: 36,
+              bottom: 10,
               child: CircleAvatar(
                 radius: 12,
-                child: Text('2'),
-              ),
-            )
-          ],
-        ),
-      ]),
-    );
+                child: Text(rank.toString()),
+              )),
+          Positioned(
+              left: 32,
+              top: -3,
+              child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
+        ]));
   }
 }
+
+
+//    return Column(children: [
+    //   SvgPicture.asset('assets/images/crown1.svg', height: 38),
+    //   Stack(
+    //     children: [
+    //       CircleAvatar(
+    //         radius: 50,
+    //         foregroundImage: AssetImage(profileImage),
+    //       ),
+    //       Positioned(
+    //         bottom: 0,
+    //         left: 38,
+    //         child: CircleAvatar(
+    //           radius: 12,
+    //           child: Text(rank.toString()),
+    //         ),
+    //       ),
+    //     ],
+    //   )
+    // ]);
