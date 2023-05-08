@@ -13,27 +13,32 @@ class PodiumAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 150,
-        width: 100,
+        width: 110,
         child: Stack(children: [
           const Positioned(
             top: 25,
             child: CircleAvatar(
-              foregroundImage: AssetImage(
-                'assets/images/profile_1.jpg',
+              backgroundColor: Colors.amber,
+              radius: 55,
+              child: CircleAvatar(
+                foregroundImage: AssetImage(
+                  'assets/images/profile_1.jpg',
+                ),
+                radius: 50,
               ),
-              radius: 50,
             ),
           ),
           Positioned(
-              left: 36,
+              left: 42,
               bottom: 10,
               child: CircleAvatar(
+                backgroundColor: Colors.amberAccent,
                 radius: 12,
                 child: Text(rank.toString()),
               )),
           if (rank == 1)
             Positioned(
-                left: 32,
+                left: 38,
                 top: -3,
                 child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
         ]));
