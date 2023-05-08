@@ -31,10 +31,11 @@ class PodiumAvatar extends StatelessWidget {
                 radius: 12,
                 child: Text(rank.toString()),
               )),
-          Positioned(
-              left: 32,
-              top: -3,
-              child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
+          if (rank == 1)
+            Positioned(
+                left: 32,
+                top: -3,
+                child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
         ]));
   }
 }
