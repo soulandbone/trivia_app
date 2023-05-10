@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:trivia_app/utils/app_styles.dart';
+import 'package:trivia_app/widgets/composed_widgets/podium.dart';
 import 'package:trivia_app/widgets/leaderboards_tile.dart';
-import 'package:trivia_app/widgets/podium_avatar.dart';
 
 import '../widgets/composed_widgets/switch_three.dart';
 
@@ -20,6 +20,7 @@ class LeaderBoardsScreen extends StatelessWidget {
               colors: [AppStyles.leftGradient, AppStyles.rightGradient])),
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Gap(40),
             const Text(
@@ -30,13 +31,39 @@ class LeaderBoardsScreen extends StatelessWidget {
                 button1Text: 'All Time',
                 button2Text: 'Month',
                 button3Text: 'Week'),
-            Transform.scale(
-              scale: 1,
-              child: const PodiumAvatar(
-                profileImage: 'assets/images/profile_1.jpg',
-                rank: 1,
-              ),
-            ),
+            const Podium(profileImage: 'assets/images/profile_1.jpg', rank1: 1),
+
+            // Container(
+            //   color: Colors.red,
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       Column(
+            //         children: [
+            //           Transform.scale(
+            //             scale: 0.5,
+            //             child: const PodiumAvatar(
+            //                 profileImage: 'assets/images/profile_1.jpg',
+            //                 rank: 1),
+            //           ),
+            //         ],
+            //       ),
+            //       Transform.scale(
+            //         scale: 1,
+            //         child: const PodiumAvatar(
+            //             profileImage: 'assets/images/profile_1.jpg', rank: 1),
+            //       ),
+            //       Align(
+            //         alignment: Alignment.center,
+            //         child: Transform.scale(
+            //           scale: 0.5,
+            //           child: const PodiumAvatar(
+            //               profileImage: 'assets/images/profile_1.jpg', rank: 1),
+            //         ),
+            //       )
+            //     ],
+            //   ),
+            // ),
             const Gap(15),
             Container(
               height: 510,
