@@ -3,8 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class PodiumAvatar extends StatelessWidget {
   final String profileImage;
-  final int
-      rank; // if rank is 1, it is different, higher, probably should be at a higher level to make it be in the middle center. Something to consider
+  final int rank;
 
   const PodiumAvatar(
       {required this.profileImage, required this.rank, super.key});

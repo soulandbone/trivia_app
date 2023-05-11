@@ -9,31 +9,21 @@ class Podium extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Center(child: PodiumAvatar(profileImage: profileImage, rank: rank1)),
-        Align(
-            alignment: Alignment.bottomCenter,
-            child: buildRow(profileImage, rank1)),
-      ],
-    );
-  }
-}
-
-Widget buildRow(String profileImage, int rank) => Container(
-      width: double.infinity,
-      color: Colors.black38,
+    return Container(
+      color: Colors.lightBlue,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.end, //add this line
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Transform.scale(
-            scale: 0.7,
-            child: PodiumAvatar(profileImage: profileImage, rank: rank),
-          ),
+              scale: 0.65,
+              child: PodiumAvatar(profileImage: profileImage, rank: rank1)),
+          PodiumAvatar(profileImage: profileImage, rank: rank1),
           Transform.scale(
-            scale: 0.7,
-            child: PodiumAvatar(profileImage: profileImage, rank: rank),
-          )
+              scale: 0.65,
+              child: PodiumAvatar(profileImage: profileImage, rank: rank1)),
         ],
       ),
     );
+  }
+}
