@@ -11,19 +11,17 @@ class PodiumAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: const BoxDecoration(color: Colors.indigoAccent),
+        //decoration: const BoxDecoration(color: Colors.indigoAccent), // for debuggind purposes
         height: 140,
         width: 110,
         child: Stack(children: [
-          const Positioned(
+          Positioned(
             top: 25,
             child: CircleAvatar(
               backgroundColor: Colors.amber,
               radius: 55,
               child: CircleAvatar(
-                foregroundImage: AssetImage(
-                  'assets/images/profile_1.jpg',
-                ),
+                foregroundImage: AssetImage(profileImage),
                 radius: 50,
               ),
             ),
