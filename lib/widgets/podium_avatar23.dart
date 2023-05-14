@@ -11,8 +11,8 @@ class PodiumAvatar23 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 90,
-      width: 70,
+      height: 90, //original is 90
+      width: 70, //original is 70
       decoration: const BoxDecoration(color: Colors.deepPurple),
       child: Stack(children: [
         Positioned(
