@@ -31,7 +31,12 @@ class LeaderBoardsScreen extends StatelessWidget {
                 button1Text: 'All Time',
                 button2Text: 'Month',
                 button3Text: 'Week'),
-            const Podium(profileImage: 'assets/images/profile_1.jpg', rank1: 1),
+            const Podium(
+              profileImage: 'assets/images/profile_1.jpg',
+              rank1: 1,
+              rank2: 2,
+              rank3: 3,
+            ),
 
             // Container(
             //   color: Colors.red,

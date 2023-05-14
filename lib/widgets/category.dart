@@ -16,7 +16,7 @@ class Category extends StatelessWidget {
         borderOnForeground: true,
         shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: Colors.deepOrange.withOpacity(0.7),
+              color: Colors.deepOrange.withOpacity(0.4),
               width: 2,
             ),
             borderRadius: const BorderRadius.all(

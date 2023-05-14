@@ -11,7 +11,8 @@ class PodiumAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 150,
+        decoration: const BoxDecoration(color: Colors.indigoAccent),
+        height: 140,
         width: 110,
         child: Stack(children: [
           const Positioned(
@@ -29,17 +30,16 @@ class PodiumAvatar extends StatelessWidget {
           ),
           Positioned(
               left: 42,
-              bottom: 10,
+              bottom: 0,
               child: CircleAvatar(
                 backgroundColor: Colors.amberAccent,
-                radius: 12,
+                radius: 14,
                 child: Text(rank.toString()),
               )),
-          if (rank == 1)
-            Positioned(
-                left: 38,
-                top: -3,
-                child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
+          Positioned(
+              left: 38,
+              top: -3,
+              child: SvgPicture.asset('assets/images/crown1.svg', height: 32))
         ]));
   }
 }
