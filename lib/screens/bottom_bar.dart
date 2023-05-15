@@ -23,7 +23,11 @@ class _BottomBarState extends State<BottomBar> {
 
   List<Widget> pages = [
     HomeScreen(),
-    const ProfileScreen(),
+    const ProfileScreen(
+      userName: 'Laura Lewis',
+      userEmail: 'laura@triviagame.com',
+      userProfilePic: 'assets/images/profile_3.jpg',
+    ), // IMPORTANT: Need to see how to link this, considering that in this case it has a constructo, and the userName, userEmail, and userProfilePic, should be generated dynamically
     const LeaderBoardsScreen()
   ];
 
