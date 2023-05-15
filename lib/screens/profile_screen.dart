@@ -19,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Your Profile'),
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity,
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           const Gap(30),
