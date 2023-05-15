@@ -33,7 +33,10 @@ class ProfileScreen extends StatelessWidget {
             style: AppStyles.title.copyWith(fontSize: 38),
           ),
           Gap(10),
-          Text(userEmail)
+          Text(
+            userEmail,
+            style: const TextStyle(color: Colors.grey, fontSize: 16),
+          )
         ]),
       ),
     );

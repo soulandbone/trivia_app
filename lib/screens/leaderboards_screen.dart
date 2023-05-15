@@ -39,38 +39,6 @@ class LeaderBoardsScreen extends StatelessWidget {
               rank2: 2,
               rank3: 3,
             ),
-
-            // Container(
-            //   color: Colors.red,
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       Column(
-            //         children: [
-            //           Transform.scale(
-            //             scale: 0.5,
-            //             child: const PodiumAvatar(
-            //                 profileImage: 'assets/images/profile_1.jpg',
-            //                 rank: 1),
-            //           ),
-            //         ],
-            //       ),
-            //       Transform.scale(
-            //         scale: 1,
-            //         child: const PodiumAvatar(
-            //             profileImage: 'assets/images/profile_1.jpg', rank: 1),
-            //       ),
-            //       Align(
-            //         alignment: Alignment.center,
-            //         child: Transform.scale(
-            //           scale: 0.5,
-            //           child: const PodiumAvatar(
-            //               profileImage: 'assets/images/profile_1.jpg', rank: 1),
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // ),
             const Gap(15),
             Container(
               height: 510,
@@ -80,7 +48,7 @@ class LeaderBoardsScreen extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.elliptical(150, 50),
                       topRight: Radius.elliptical(150, 50))),
-              child: Container(
+              child: SizedBox(
                 height: 100,
                 child: ListView(children: const [
                   // Next assignment, use the builder to generate entries from a MAP
